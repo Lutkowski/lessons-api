@@ -22,8 +22,11 @@ export function mapLessonsFilters(validatedQuery) {
         dto.studentsCountTo = parts[1] ?? parts[0];
     }
 
-    dto.page = value.page;
-    dto.lessonsPerPage = value.lessonsPerPage;
+    const page = value.page;
+    const lessonsPerPage = value.lessonsPerPage;
+
+    dto.limit = lessonsPerPage;
+    dto.offset = (page - 1) * lessonsPerPage;
 
     return dto;
 }

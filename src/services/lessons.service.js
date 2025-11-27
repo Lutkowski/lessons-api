@@ -4,6 +4,6 @@ import {mapLessonsFilters} from "../mappers/lessons.mapper.js";
 export const lessonsService = {
     async getLessons(validatedQuery) {
         const dto = mapLessonsFilters(validatedQuery);
-        return await lessonsRepository.getLessons(validatedQuery);
+        return await lessonsRepository.getLessons(dto);
     }
 }
