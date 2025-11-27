@@ -1,9 +1,8 @@
 import express from 'express';
+import {lessonsRouter} from "./routes/lessons.routes.js";
 
 export const app = express();
 
 app.use(express.json());
 
-app.get('/', (req, res) => {
-    res.json({ message: 'init' });
-});
+app.use('/lessons', lessonsRouter);
